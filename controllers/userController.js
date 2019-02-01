@@ -1,7 +1,6 @@
 import routes from '../routes';
-import restaurants from '../db';
 
-export const home = (req, res) => res.render("home", { pageName: "Home", restaurants });
+export const home = (req, res) => res.render("home", { pageName: "Home"});
 
 export const getJoin = (req, res) => {
     res.render("join", { pageName: "Join"});
