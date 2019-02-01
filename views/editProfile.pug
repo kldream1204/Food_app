@@ -1,0 +1,9 @@
+extends ./layouts/main
+
+block content
+    .form-container
+        form(action=routes.editProfile(user.id), method='post')
+            label(for="photo") User Profile
+            input(type="file", id="photo", name="photo")
+            input(type="text", name="name", placeholder="Name")
+            input(type="submit", value="Edit Profile")

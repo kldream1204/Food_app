@@ -1,0 +1,11 @@
+extends ./layouts/main
+
+block content
+    .user-detail__column
+        img(src="#")    
+        h4
+        h4
+    .user-detail__column
+        a(href=routes.editProfile(user.id)) Edit Profile    
+        a(href=routes.changePassword(user.id)) Change Password
+    

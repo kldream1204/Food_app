@@ -1,0 +1,20 @@
+.header
+    .header__column
+        i.fas.fa-utensils
+        a(href=routes.home) FOOD APP
+    .header__column
+        .header__column__form-container
+            form(action=routes.search, method="get")
+                input(type="text", name="search", placeholder="Serach") 
+    .header__column
+        ul
+            li 
+                a(href=routes.join) JOIN
+            li  
+                a(href=routes.login) LOGIN 
+            li  
+                a(href=`/res${routes.resUpload}`) UPLOAD
+            li
+                a(href=routes.userDetail(1)) PROFILE  
+            li 
+                a(href=routes.logout) LOGOUT                 

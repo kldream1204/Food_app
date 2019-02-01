@@ -1,0 +1,27 @@
+extends ./layouts/main
+include ./mixins/resBlock
+
+block content
+    .top-restaurant
+        h3 TOP
+        each restaurant in restaurants
+            +resBlock({
+                title: restaurant.title,
+                photo: restaurant.photo,
+                description: restaurant.description,
+                point: restaurant.point,
+                id: restaurant.id
+            })
+    .location-restaurant
+        h3 Location TOP
+        ul
+            li Seoul
+
+            li Incheon
+    .menu-restaurant 
+        h3 Menu TOP
+        ul
+            li KOREA
+
+            li JAPAN
+        
