@@ -1,4 +1,5 @@
-import routes from "../routes";
+import routes from '../routes';
+import resModel from '../models/resModel';
 
 export const location = (req, res) => res.render("location", { pageName: "Location" });
 export const locationDetail = (req, res) => res.render("locationDetail", { pageName: "LocationDetail" });
@@ -10,13 +11,47 @@ export const getResUpload = (req, res) => {
     res.render("resUpload", { pageName: "ResUpload" });
 }
 
-export const postResUpload = (req, res) => {
-    res.redirect(routes.resDetail(1));
+export const postResUpload = async (req, res) => {
+    const {
+        body : {title, description},
+        file : {path}
+    } = req;
+    const restaurants = await resModel.create({
+        photo: path,
+        title,
+        description
+    })
+    res.redirect(routes.resDetail(restaurants.id));
 }
 
-export const resDetail = (req, res) => res.render("resDetail", { pageName: "ResDetail" });
-export const resEdit = (req, res) => res.render("resEdit", { pageName: "RedEdit" });
-export const resDelete = (req, res) => res.render("resDelete", { pageName: "RedDelete" });
+export const resDetail = async (req, res) => {
+    const {params:{id}} = req;
+    const restaurants = await resModel.findById(id)
+    res.render("resDetail", { pageName: "ResDetail", restaurants });
+}
+
+export const getResEdit = async (req, res) => {
+    const {params:{id}} = req;
+    const restaurants = await resModel.findById(id)
+    res.render("resEdit", { pageName: "RedEdit", restaurants });
+}
+
+export const postResEdit = async (req, res) => {
+    const {
+        params:{id},
+        body: {title, description}
+    } = req;
+    await resModel.findByIdAndUpdate({_id : id}, {title, description})
+    res.redirect(routes.resDetail(id));
+}
+
+export const resDelete = async (req, res) => {
+    const {
+        params:{id}
+    } = req;
+    await resModel.findByIdAndDelete({_id : id});
+    res.redirect(routes.home);
+}
 
 export const search = (req, res) => {
     const {query:{search}} = req;

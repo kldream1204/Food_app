@@ -1,4 +1,7 @@
-import routes from './routes'
+import routes from './routes';
+import multer from 'multer';
+
+const multerRes = multer({ dest : "uploads/restaurant/"});
 
 export const localsMiddlewares = (req, res, next) => {
     res.locals.routes = routes,
@@ -6,4 +9,6 @@ export const localsMiddlewares = (req, res, next) => {
         id:1
     },
     next()
-}
+};
+
+export const uploadRes = multerRes.single("photo");

@@ -1,5 +1,6 @@
 import app from './app';
 import './db';
+import './models/resModel'
 import dotenv from 'dotenv';
 dotenv.config()
 

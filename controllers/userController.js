@@ -1,7 +1,15 @@
 import routes from '../routes';
+import resModel from '../models/resModel';
 
-export const home = (req, res) => res.render("home", { pageName: "Home"});
-
+export const home = async (req, res) => {
+    const restaurants = await resModel.find({});
+    try {
+        res.render("home", { pageName: "Home" ,restaurants});
+    }catch {
+        res.render("home", { pageName: "Home" ,restaurants: [] });
+    }
+}
+    
 export const getJoin = (req, res) => {
     res.render("join", { pageName: "Join"});
 }

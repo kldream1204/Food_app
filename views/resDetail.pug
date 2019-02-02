@@ -1,3 +1,9 @@
 extends ./layouts/main
 
 block content
+    .res-detail
+        img(src=`/${restaurants.photo}`)
+        h3.res-title=restaurants.title
+        p.res-description=restaurants.description
+        a(href=routes.resEdit(restaurants.id)) Edit Restaurant
+        a(href=routes.resDelete(restaurants.id)) Delete Restaurant

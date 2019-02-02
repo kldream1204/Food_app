@@ -2,9 +2,9 @@ extends ./layouts/main
 
 block content
     .form-container 
-        form(action=`/res${routes.resUpload}`, method="post")
+        form(action=`/res${routes.resUpload}`, method="post", enctype="multipart/form-data")
             label(for="photo") Representative image
-            input(type="file", id="photo", name="photo")
+            input(type="file", id="photo", name="photo", accept="image/*", required=true)
             input(type="text", name="title", placeholder="Title", required=true)
             input(type="text", name="description", placeholder="Description", required=true)
             input(type="submit", value="Upload")

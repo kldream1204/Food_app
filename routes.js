@@ -63,8 +63,20 @@ const routes = {
             return RESTAURANT_DETAIL;
         };
     },
-    resEdit : RESTAURANT_EDIT,
-    resDelete : RESTAURANT_DELETE,
+    resEdit : (id) => {
+        if (id) {
+            return `/res/${id}/edit`;
+        }else {
+            return RESTAURANT_EDIT;
+        };
+    },
+    resDelete : (id) => {
+        if (id) {
+            return `/res/${id}/delete`;
+        }else {
+            return RESTAURANT_DELETE;
+        }
+    },
     location : LOCATION,
     locationDetail : LOCATION_DETAIL,
     menu : MENU,
