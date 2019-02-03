@@ -2,7 +2,7 @@ import routes from '../routes';
 import resModel from '../models/resModel';
 
 export const home = async (req, res) => {
-    const restaurants = await resModel.find({});
+    const restaurants = await resModel.find({}).sort({_id:-1});
     try {
         res.render("home", { pageName: "Home" ,restaurants});
     }catch {

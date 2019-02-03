@@ -1,4 +1,15 @@
 extends ./layouts/main
+include ./mixins/resBlock
 
 block content
-    h3 Searching by #{search}
+    .search__column
+        h3 Searching by #{search}
+    .search__column
+        each restaurant in restaurants
+            +resBlock({
+                title: restaurant.title,
+                photo: restaurant.photo,
+                description: restaurant.description,
+                point: restaurant.point,
+                id: restaurant.id
+            })

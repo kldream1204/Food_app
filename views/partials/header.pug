@@ -1,11 +1,13 @@
-.header
+header.header
     .header__column
-        i.fas.fa-utensils
-        a(href=routes.home) FOOD APP
+        a(href=routes.home) 
+            h3.header__title-first DEOP
+            h3.header__title-last BAB
+            i.fas.fa-utensils
     .header__column
-        .header__column__form-container
             form(action=routes.search, method="get")
-                input(type="text", name="search", placeholder="Serach") 
+                input(type="text", name="search", placeholder="Search") 
+                i.fas.fa-search
     .header__column
         ul
             li 

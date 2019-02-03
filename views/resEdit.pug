@@ -4,5 +4,5 @@ block content
     .form-container
         form(action=routes.resEdit(restaurants.id), method="post")
             input(type="text", name="title", value=restaurants.title)
-            input(type="text", name="description", value=restaurants.description)
+            textarea(name="description")=restaurants.description
             input(type="submit", value="Edit")

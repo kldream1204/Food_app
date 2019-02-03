@@ -53,7 +53,8 @@ export const resDelete = async (req, res) => {
     res.redirect(routes.home);
 }
 
-export const search = (req, res) => {
+export const search = async (req, res) => {
     const {query:{search}} = req;
-    res.render("search", { pageName: "Search", search });
+    const restaurants = await resModel.find({title:{ $regex : search , $options: 'i' }})
+    res.render("search", { pageName: "Search", search, restaurants });
 }
