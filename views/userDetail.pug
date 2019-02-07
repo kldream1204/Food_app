@@ -2,10 +2,11 @@ extends ./layouts/main
 
 block content
     .user-detail__column
-        img(src="#")    
-        h4
-        h4
+        img(src=`/${user.avatarUrl}`)    
+        h4=user.ID
+        h4=user.name
     .user-detail__column
-        a(href=routes.editProfile(user.id)) Edit Profile    
-        a(href=routes.changePassword(user.id)) Change Password
+        if loginUser && user.id === loginUser.id
+            a(href=routes.editProfile(user.id)) Edit Profile    
+            a(href=routes.changePassword(user.id)) Change Password
     

@@ -10,8 +10,18 @@ import menuRouter from './routers/menuRouter';
 import resRouter from './routers/resRouter';
 import userRouter from './routers/userRouter';
 import {localsMiddlewares} from './middlewares'
+import "./passport";
+import passport from "passport";
+import session from "express-session";
+import dotenv from "dotenv";
+import connectMongo from "connect-mongo";
+import mongoose from "mongoose";
+dotenv.config()
+
 
 const app =express();
+
+const CookieStore = connectMongo(session);
 
 //Middlewares
 app.use(helmet());
@@ -22,7 +32,15 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(morgan("dev"));
-app.use(localsMiddlewares)
+app.use(session({
+    secret: process.env.COOKIE_USER,
+    store: new CookieStore({mongooseConnection: mongoose.connection}),
+    resave: true,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(localsMiddlewares);
 
 //Rourters
 app.use(routes.home, globalRouter);

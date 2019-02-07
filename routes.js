@@ -10,6 +10,7 @@ const USER = "/user";
 const USER_DETAIL = "/:id";
 const EDIT_PROFILE = "/:id/edit";
 const CHANGE_PASSWORD = "/:id/change-password";
+const ME = "/me";
 
 //Restaurant
 const RESTAURANT = "/res";
@@ -80,7 +81,8 @@ const routes = {
     location : LOCATION,
     locationDetail : LOCATION_DETAIL,
     menu : MENU,
-    menuDetail : MENU_DETIAIL
+    menuDetail : MENU_DETIAIL,
+    me: ME
 };
 
 export default routes;

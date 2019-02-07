@@ -10,13 +10,15 @@ header.header
                 i.fas.fa-search
     .header__column
         ul
-            li 
-                a(href=routes.join) JOIN
-            li  
-                a(href=routes.login) LOGIN 
-            li  
-                a(href=`/res${routes.resUpload}`) UPLOAD
-            li
-                a(href=routes.userDetail(1)) PROFILE  
-            li 
-                a(href=routes.logout) LOGOUT                 
+            if !loginUser
+                li 
+                    a(href=routes.join) JOIN
+                li  
+                    a(href=routes.login) LOGIN 
+            else
+                li  
+                    a(href=`/res${routes.resUpload}`) UPLOAD
+                li
+                    a(href=`/user${routes.me}`) PROFILE  
+                li 
+                    a(href=routes.logout) LOGOUT                 

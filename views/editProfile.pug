@@ -2,8 +2,8 @@ extends ./layouts/main
 
 block content
     .form-container
-        form(action=routes.editProfile(user.id), method='post')
+        form(action=routes.editProfile(user.id), method='post', enctype="multipart/form-data")
             label(for="photo") User Profile
-            input(type="file", id="photo", name="photo")
-            input(type="text", name="name", placeholder="Name")
+                input(type="file", id="photo", name="photo", accept="image/*")
+            input(type="text", name="name", placeholder="Name", value=user.name)
             input(type="submit", value="Edit Profile")

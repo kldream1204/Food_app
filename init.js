@@ -1,6 +1,7 @@
 import app from './app';
 import './db';
 import './models/resModel'
+import "./models/userModel"
 import dotenv from 'dotenv';
 dotenv.config()
 
