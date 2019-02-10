@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     restaurants: [
         {
             type: mongoose.Schema.Types.ObjectId,
-        ref: "res"
+            ref: "res"
         }
     ]
 });

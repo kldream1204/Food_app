@@ -4,7 +4,7 @@ import userModel from "../models/userModel";
 import passport from "passport";
 
 export const home = async (req, res) => {
-    const restaurants = await resModel.find({}).sort({_id:-1});
+    const restaurants = await resModel.find({}).limit(6);
     try {
         res.render("home", { pageName: "Home" ,restaurants});
     }catch {

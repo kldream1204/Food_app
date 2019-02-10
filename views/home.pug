@@ -2,34 +2,17 @@ extends ./layouts/main
 include ./mixins/resBlock
 
 block content
-    .home
-        .home__slide-container
-            ul.home__slide
-                li  
-                li 
-                li  
-                li  
-                li
-        .button-container        
-            button.pre-button.button-display
-                i.fas.fa-angle-left 
-            i.fas.fa-circle.circle-1.circle-color 
-            i.fas.fa-circle.circle-2 
-            i.fas.fa-circle.circle-3  
-            i.fas.fa-circle.circle-4  
-            i.fas.fa-circle.circle-5  
-            button.next-button 
-                i.fas.fa-angle-right
-                    
+    .home           
         .top-restaurant
-            h3 TOP
-            each restaurant in restaurants
-                +resBlock({
-                    title: restaurant.title,
-                    photo: restaurant.photo,
-                    description: restaurant.description,
-                    point: restaurant.point,
-                    id: restaurant.id
+            h3.top-restaurant__title TOP
+            .top-restaurant__content
+                each restaurant in restaurants
+                    +resBlock({
+                        title: restaurant.title,
+                        photo: restaurant.photo,
+                        description: restaurant.description,
+                        point: restaurant.point,
+                        id: restaurant.id
                 })
         .location-restaurant
             h3 Location TOP

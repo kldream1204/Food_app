@@ -1,5 +1,6 @@
 import routes from '../routes';
 import resModel from '../models/resModel';
+import commentModel from '../models/resComment';
 
 export const location = (req, res) => res.render("location", { pageName: "Location" });
 export const locationDetail = (req, res) => res.render("locationDetail", { pageName: "LocationDetail" });
@@ -36,7 +37,7 @@ export const postResUpload = async (req, res) => {
 export const resDetail = async (req, res) => {
     const {params:{id}} = req;
     try {
-        const restaurants = await resModel.findById(id).populate("creator")
+        const restaurants = await resModel.findById(id).populate("creator").populate("comments")
         res.render("resDetail", { pageName: "ResDetail", restaurants });
     } catch (error) {
         console.log(error);
@@ -100,7 +101,28 @@ export const search = async (req, res) => {
         res.render("search", { pageName: "Search", search, restaurants });
     } catch (error) {
         console.log(error);
-        res.redirect(routes.home);
+        res.redirect(routes.home);  
     }
     
+}
+
+export const postAddComment = async (req, res) => {
+    const {
+        params:{id},
+        body:{comment},
+        user
+    } = req;
+    try {
+        const restaurant = await resModel.findById(id);
+        const newComment = await commentModel.create({
+            text: comment,
+            creator: user.id
+        });
+        restaurant.comments.push(newComment.id);
+        restaurant.save();
+    }catch(error) {
+        res.status(400);
+    }finally {
+        res.end();
+    }
 }

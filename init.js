@@ -2,6 +2,7 @@ import app from './app';
 import './db';
 import './models/resModel'
 import "./models/userModel"
+import "./models/resComment"
 import dotenv from 'dotenv';
 dotenv.config()
 

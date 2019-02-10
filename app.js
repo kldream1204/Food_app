@@ -16,6 +16,8 @@ import session from "express-session";
 import dotenv from "dotenv";
 import connectMongo from "connect-mongo";
 import mongoose from "mongoose";
+import apiRouter from "./routers/apiRouter";
+
 dotenv.config()
 
 
@@ -48,5 +50,7 @@ app.use(routes.location, locationRouter);
 app.use(routes.menu, menuRouter);
 app.use(routes.restaurant, resRouter);
 app.use(routes.user, userRouter);
+app.use(routes.api, apiRouter);
+
 
 export default app;

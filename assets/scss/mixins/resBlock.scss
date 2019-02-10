@@ -1,0 +1,42 @@
+.resBlock {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    width: 420px;   
+    height: 250px;
+    
+}
+
+.resBlock a img {
+    width: 420px;
+    height: 250px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+}
+
+.resBlock-content {
+    width: 420px;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.res-description {
+    display: none;
+}
+
+.resBlock:hover .res-title{
+    display: none;
+}
+
+.resBlock:hover .res-description{
+    display: block;
+}
