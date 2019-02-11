@@ -4,6 +4,7 @@ const addCommentForm = document.getElementById("jsAddComment");
 const commentList = document.getElementById("jsCommentList");
 
 
+
 const addComment = comment => {
   const li = document.createElement("li");
   const span = document.createElement("span");

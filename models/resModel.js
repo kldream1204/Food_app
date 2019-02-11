@@ -10,10 +10,20 @@ const resSchema = new mongoose.Schema({
         required: "Title is required"
     },
     description: String,
-    point: {
+    location: {
+        type: String,
+        required: "Location is required"
+    },
+    detailLocation: {
+        type: String,
+        equired: "Detail Location is required"
+    },
+    point: [
+        {
         type: Number,
         default: 0
-    },
+        }
+    ],
     createdAt: {
         type: Date,
         default: Date.now

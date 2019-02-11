@@ -13,8 +13,9 @@ export const getResUpload = (req, res) => {
 }
 
 export const postResUpload = async (req, res) => {
+    console.log(req);
     const {
-        body : {title, description},
+        body : {title, description, location, detailLocation},
         file : {path}
     } = req;
     try {
@@ -22,6 +23,8 @@ export const postResUpload = async (req, res) => {
             photo: path,
             title,
             description,
+            location,
+            detailLocation,
             creator: req.user.id
         });
         req.user.restaurants.push(restaurants._id);
