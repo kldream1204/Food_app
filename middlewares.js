@@ -2,7 +2,8 @@ import routes from './routes';
 import multer from 'multer';
 
 const multerRes = multer({ dest : "uploads/restaurant/"});
-const multerAvatar = multer({ dest: "uploads/avatar/"})
+const multerAvatar = multer({ dest: "uploads/avatar/"});
+
 
 export const localsMiddlewares = (req, res, next) => {
     res.locals.routes = routes ;

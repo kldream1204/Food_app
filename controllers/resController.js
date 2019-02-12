@@ -129,3 +129,17 @@ export const postAddComment = async (req, res) => {
         res.end();
     }
 }
+
+export const postLocationList = async (req, res) => {
+    const {
+        params:{id}
+    } = req;
+    try {
+        const restaurants = await resModel.find({location: id});
+        console.log(restaurants)
+    }catch(error) {
+        res.status(400);
+    }finally {
+        res.end();
+    }
+}

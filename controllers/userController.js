@@ -8,7 +8,7 @@ export const home = async (req, res) => {
     try {
         res.render("home", { pageName: "Home" ,restaurants});
     }catch {
-        res.render("home", { pageName: "Home" ,restaurants: [] });
+        res.render("home", { pageName: "Home" ,restaurants: []});
     }
 }
     

@@ -9,10 +9,30 @@
 }
 
 .top-restaurant__title {
-    font-size: 24px;
-    font-weight: bold;
     color: $black;  
+    display: flex;
+    font-size: 24px;
+    align-items: flex-end;
+    font-weight: bold;
     padding-bottom: 10px;
+}
+
+.title-first {
+    color: $orange;
+}
+
+i {
+    padding-right: 5px;
+}
+
+.title-content  {
+    color: $red-orange;
+    padding-right: 10px;
+}
+
+.title-description {
+    font-size: 16px;
+    color: $real-dark-basic;
 }
 
 .top-restaurant__content {
@@ -21,4 +41,40 @@
     justify-items: center;
     border-top: 1px solid $dark-basic;
     padding-top: 20px;
+}
+
+.location-restaurant__title {
+    color: $black;  
+    display: flex;
+    font-size: 24px;
+    align-items: flex-end;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.location-restaurant ul {
+    display: flex;
+    font-weight: bold;
+}
+
+.location-restaurant .location-list {
+    overflow: hidden;
+    width: 500px;
+}
+
+.location-list__container-list {
+    transform: translateX(-500px);
+    transition: all 1s ease-in-out;
+}
+
+.location-list__container-list li {
+    padding-right: 5px;
+    color: $real-dark-basic;
+}
+
+.button-display {
+    display: none;
+}
+.list-move {
+    transform: translateX(0px); 
 }

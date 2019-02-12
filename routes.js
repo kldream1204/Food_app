@@ -30,6 +30,7 @@ const MENU_DETIAIL = "/:id";
 //Api
 const API = "/api";
 const ADD_COMMENT = "/:id/comment";
+const Location_LIST = "/:id/location";
 
 const routes = {
     home : HOME,
@@ -88,7 +89,8 @@ const routes = {
     menuDetail : MENU_DETIAIL,
     me: ME,
     api: API,
-    addComment: ADD_COMMENT
+    addComment: ADD_COMMENT,
+    locationList: Location_LIST
 };
 
 export default routes;

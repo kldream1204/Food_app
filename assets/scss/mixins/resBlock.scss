@@ -4,7 +4,6 @@
     margin-bottom: 30px;
     width: 420px;   
     height: 250px;
-    
 }
 
 .resBlock:hover {
@@ -16,31 +15,39 @@
     height: 250px;
     background-position: center;
     background-size: cover;
-    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
 }
 
 .resBlock-content {
     width: 420px;
     height: 250px;
+    padding: 5px 10px;
     position: absolute;
     bottom: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
     color: white;
     background-color: rgba(0, 0, 0, 0.3);
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
 }
 
+.res-title {
+    font-size: 24px;
+    padding-bottom: 3px;
+    color: $dark-orange;
+}
+
 .res-description {
-    display: none;
+    padding-bottom: 5px;
+
 }
 
-.resBlock:hover .res-title{
-    display: none;
+.res-location {
+    font-size: 16px;
+    color: $dark-basic;
 }
 
-.resBlock:hover .res-description{
-    display: block;
+.res-location span {
+    padding-right: 5px;
 }
