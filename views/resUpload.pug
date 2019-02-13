@@ -1,28 +1,42 @@
 extends ./layouts/main
 
 block content
+    .upload
+        .upload-title
+            span.header__title-first DEOP
+            span.header__title-last BAB
+            i.fas.fa-utensils 
+        .upload-explain
+            span 맛집등록
     .form-container 
         form(action=`/res${routes.resUpload}`, method="post", enctype="multipart/form-data")
-            label(for="photo") Representative image
-            input(type="file", id="photo", name="photo", accept="image/*", required=true)
-            input(type="text", name="title", placeholder="Title", required=true)
-            textarea(name="description", placeholder="Description")
-            select(name="location", size=1, required=true)
-                option(value="서울") 서울
-                option(value="인천") 인천
-                option(value="부산") 부산
-                option(value="대구") 대구
-                option(value="대전") 대전
-                option(value="광주") 광주
-                option(value="울산") 울산
-                option(value="경기") 경기
-                option(value="충남") 충남
-                option(value="충북") 충북
-                option(value="전북") 전북
-                option(value="전남") 전남
-                option(value="경북") 경북
-                option(value="경남") 경남
-                option(value="제주") 제주
-            input(type="text", name="detailLocation", placeholder="Detail Location", required=true)    
-            input(type="submit", value="Upload")
+            .form-content-upload
+                label(for="photo") 대표 이미지
+                input(type="file", id="photo", name="photo", accept="image/*", required=true)
+            .form-content-upload
+                span 상호명   
+                input(type="text", name="title", placeholder="Title", required=true)
+            .form-content-upload
+                span 식당설명
+                textarea(name="description", placeholder="Description")
+            .form-content-upload
+                select(name="location", size=1, required=true)
+                    option(value="서울") 서울
+                    option(value="인천") 인천
+                    option(value="부산") 부산
+                    option(value="대구") 대구
+                    option(value="대전") 대전
+                    option(value="광주") 광주
+                    option(value="울산") 울산
+                    option(value="경기") 경기
+                    option(value="충남") 충남
+                    option(value="충북") 충북
+                    option(value="전북") 전북
+                    option(value="전남") 전남
+                    option(value="경북") 경북
+                    option(value="경남") 경남
+                    option(value="제주") 제주
+            .form-content-upload       
+                input(type="text", name="detailLocation", placeholder="Detail Location", required=true)    
+            input.submit-button(type="submit", value="Upload")
 

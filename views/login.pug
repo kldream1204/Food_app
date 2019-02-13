@@ -1,8 +1,19 @@
 extends ./layouts/main
 
 block content
-    .form-container
-        form(action=routes.login, method="post")
-            input(type="text", name="ID", placeholder="ID", required=true)
-            input(type="password", name="password", placeholder="Password", required=true)
-            input(type="submit", value="LOGIN")
+    .login
+        .login-title
+            span.header__title-first DEOP
+            span.header__title-last BAB
+            i.fas.fa-utensils 
+        .login-explain
+            span 로그인
+        .form-container
+            form(action=routes.login, method="post")
+                .form-content
+                    i.far.fa-id-badge
+                    input(type="text", name="ID", placeholder="ID", required=true)
+                .form-content                    
+                    i.fas.fa-unlock-alt
+                    input(type="password", name="password", placeholder="Password", required=true)
+                input.submit-button(type="submit", value="LOGIN")

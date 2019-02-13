@@ -1,6 +1,7 @@
 import routes from '../routes';
 import resModel from '../models/resModel';
 import commentModel from '../models/resComment';
+import axios from 'axios';
 
 export const location = (req, res) => res.render("location", { pageName: "Location" });
 export const locationDetail = (req, res) => res.render("locationDetail", { pageName: "LocationDetail" });
@@ -130,16 +131,17 @@ export const postAddComment = async (req, res) => {
     }
 }
 
+export const getLocationList = async (req, res) => {
+   
+}
+
 export const postLocationList = async (req, res) => {
-    const {
-        params:{id}
-    } = req;
-    try {
-        const restaurants = await resModel.find({location: id});
-        console.log(restaurants)
-    }catch(error) {
-        res.status(400);
-    }finally {
-        res.end();
-    }
+    const restaurants = await resModel.find({location: "서울"});
+    await axios({
+        url: `/api/서울/location`,
+        method: "post",
+        data: {
+            restaurants
+        }
+    })
 }

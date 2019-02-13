@@ -1,0 +1,31 @@
+.upload {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 80px;
+    text-align: center
+}
+
+.upload-title {
+    font-size: 42px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.upload-title span {
+    font-size: 56px;
+}
+
+.upload-title .header__title-first {
+    color: $orange;
+}
+
+.upload-explain {
+    font-size: 32px;
+    font-weight: bold;
+    color: $real-dark-basic;
+    padding-bottom: 20px;
+}

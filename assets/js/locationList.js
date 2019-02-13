@@ -1,18 +1,23 @@
 import axios from "axios";
 
+
 const locationSeoul = document.querySelector(".location-seoul");
 
-const sendLocation =  async location => {
+
+const getLocation =  async location => {
     await axios({
         url: `/api/${location}/location`,
-        method: "post"
-    })
+        method: "get"
+    }).then(res => console.log(res));
+    
+ 
 }
 
 const handlelocation = event => {
     const location = event.target.innerText
+    fetch("http://localhost:5000/api/서울/location")
     console.log(location);
-    sendLocation(location);
+    getLocation(location);
 }
 
 function init() {
