@@ -29,3 +29,46 @@
     color: $real-dark-basic;
     padding-bottom: 20px;
 }
+
+.form-container {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.form-content-upload {
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+    width: 500px;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.form-content-upload .title {
+    background: $real-dark-basic;
+    color: white;
+    width: 100px;
+}
+
+.form-content-upload input {
+    border: none;
+    width: 400px;
+}
+
+.form-content-upload textarea {
+    border: none;
+    width: 400px;
+    height: 30px;
+}
+
+.form-content-upload .select-box {
+    width: 400px;
+}
+
+.form-content-upload select {
+    border: none;
+    width: 100px;
+    background-color: $real-dark-basic;
+    color: white;
+}

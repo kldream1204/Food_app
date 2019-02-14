@@ -1,12 +1,24 @@
 extends ./layouts/main
 
 block content
-    .user-detail__column
-        img(src=`/${user.avatarUrl}`)    
-        h4=user.ID
-        h4=user.name
-    .user-detail__column
-        if loginUser && user.id === loginUser.id
-            a(href=routes.editProfile(user.id)) Edit Profile    
-            a(href=routes.changePassword(user.id)) Change Password
-    
+    .user-detail
+        .user-detail__column
+            .user-detail__column__img
+                img(src=`/${user.avatarUrl}`, alt="userImage", onerror="this.src='http://chittagongit.com//images/default-user-icon/default-user-icon-8.jpg'")    
+            .user-detail__column__id
+                .title
+                    span ID
+                .content    
+                    span=user.ID
+            .user-detail__column__name
+                .title
+                    span NAME
+                .content    
+                    span=user.name
+        .user-detail__column
+            if loginUser && user.id === loginUser.id
+                .user-detail__column__loged
+                    a(href=routes.editProfile(user.id)) Edit Profile    
+                .user-detail__column__loged
+                    a(href=routes.changePassword(user.id)) Change Password
+        

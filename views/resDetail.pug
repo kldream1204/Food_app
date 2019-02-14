@@ -6,12 +6,13 @@ block content
         h3.res-title=restaurants.title
         h3=restaurants.creator.name
         p.res-description=restaurants.description
+        a(href=routes.userDetail(restaurants.creator.id))=restaurants.creator.ID
         if loginUser && loginUser.id === restaurants.creator.id
             a(href=routes.resEdit(restaurants.id)) Edit Restaurant
             a(href=routes.resDelete(restaurants.id)) Delete Restaurant
-    .res__comment 
-        form#jsAddComment
-            input(type="text", name="comment", placeholder="Comment").input-comment
-        ul.res__comment-list#jsCommentList    
-            each comment in restaurants.comments
-                span=comment.text
+        .res__comment 
+            form#jsAddComment
+                input(type="text", name="comment", placeholder="Comment").input-comment
+            ul.res__comment-list#jsCommentList    
+                each comment in restaurants.comments
+                    span=comment.text
