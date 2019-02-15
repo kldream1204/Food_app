@@ -7,3 +7,67 @@
 .res__detail img {
     width: 800px;;
 }
+
+.res__container {
+    display: flex;
+    justify-content: space-between;    
+}
+
+.res__detail__box .res-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: $black;
+    margin-top: 10px;
+}
+
+.res__detail__box .res-location {
+    font-size: 22px;
+    color: $orange;
+}
+
+.res__detail__box .res-detail-location {
+    color: $real-dark-basic;
+}
+
+.res__detail__box .res-description {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.res__detail__box .res-user {
+    margin-right: 5px;
+}
+
+.res__detail__box a {
+    margin-left: 5px;
+}
+
+.res-edit {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.res-edit a:first-child {
+    margin-bottom: 5px;
+}
+
+.res-edit a:last-child {
+
+}
+
+.res__comment {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.res__comment ul {
+    margin-top: 10px;
+}
+
+.res__comment ul li {
+    margin-top: 10px;
+}

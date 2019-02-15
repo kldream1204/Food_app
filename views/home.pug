@@ -4,7 +4,24 @@ include ./mixins/resBlock
 block content
     .home
         .home__slide-show 
-
+            .slide-show-container
+                ul.slide-show__box
+                    li 
+                    li
+                    li
+                    li
+                    li
+            .slide-button__container
+                button.slide-button-pre
+                    i.fas.fa-caret-left   
+                button.slide-button-next    
+                    i.fas.fa-caret-right
+            .slide-count 
+                i.fas.fa-circle.dot-1.count-dot      
+                i.fas.fa-circle.dot-2        
+                i.fas.fa-circle.dot-3        
+                i.fas.fa-circle.dot-4        
+                i.fas.fa-circle.dot-5        
         .top-restaurant
             .top-restaurant__title 
                 h3.title-first 덮
@@ -30,34 +47,42 @@ block content
                 i.fas.fa-utensils
                 span.title-content 맛집
                 span.title-description 우리 지역의 맛집은 어디있을까?
-            ul
-                li.location-button-show
-                    span 펼치기
-                    i.fas.fa-caret-right
-                li.location-button-hidden.button-display
-                    span 접기
-                    i.fas.fa-caret-right    
-                li.location-list
-                    .location-list__container
-                        ul.location-list__container-list                    
-                            li.location-seoul 서울
-                            li 인천 
-                            li 부산 
-                            li 대구 
-                            li 대전 
-                            li 광주 
-                            li 울산 
-                            li 경기 
-                            li 충남 
-                            li 충북 
-                            li 전북 
-                            li 전남 
-                            li 경북 
-                            li 경남 
-                            li 제주 
-        .menu-restaurant 
-            h3 Menu TOP
-            ul
-                li KOREA
-
-                li JAPAN
+            .location-list
+                .location-list__container
+                    ul.location-list__container-list                    
+                        li 서울
+                        li 인천 
+                        li 부산 
+                        li 대구 
+                        li 대전 
+                        li 광주 
+                        li 울산 
+                        li 경기 
+                        li 충남 
+                        li 충북 
+                        li 전북 
+                        li 전남 
+                        li 경북 
+                        li 경남 
+                        li 제주 
+        .menu-restaurant
+            .menu-restaurant__title 
+                h3.title-first 매
+                h3.title-last 뉴
+                i.fas.fa-utensils
+                span.title-content 맛집
+                span.title-description 매뉴별 맛집을 알아보자! 
+            .menulocation-list
+                .menu-list__container
+                    ul.menu-list__container-list                    
+                        li 한식
+                        li 중식 
+                        li 일식 
+                        li 양식 
+                        li 분식 
+                        li 아시아 
+                        li 퓨전
+                        li 디저트 
+                    
+                        
+        
