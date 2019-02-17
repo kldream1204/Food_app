@@ -7,6 +7,7 @@
 }
 
 .slide-show-container {
+    position: relative;
     overflow: hidden;
     width: 100%;
     max-width: 1400px;
@@ -28,6 +29,32 @@
     background-position: center;    
 }
 
+.slide-button__container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    bottom: 185px;
+}
+
+.slide-button__container button {
+    background: none;
+    border: none;
+}
+
+.slide-button__container button i {
+    font-size: 100px;
+    color: $black;
+}
+
+.slide-count__container {
+    position: absolute;
+    bottom: 5px;;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .count-dot {
     color: $orange;
 }
@@ -36,6 +63,7 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
 .top-restaurant__title {

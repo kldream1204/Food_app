@@ -1,9 +1,18 @@
 extends ./layouts/main
 
 block content
-    .form-container
+    .edit-container
+        .edit-title
+            span.header__title-first DEOP
+            span.header__title-last BAB
+            i.fas.fa-utensils 
+        .edit-explain
+            span 회원정보변경
         form(action=routes.editProfile(user.id), method='post', enctype="multipart/form-data")
-            label(for="photo") User Profile
+            .photo
+                label(for="photo") User Profile
                 input(type="file", id="photo", name="photo", accept="image/*")
-            input(type="text", name="name", placeholder="Name", value=user.name)
-            input(type="submit", value="Edit Profile")
+            .name
+                span NAME
+                input(type="text", name="name", placeholder="Name", value=user.name)
+            input(type="submit", value="Edit Profile").submit

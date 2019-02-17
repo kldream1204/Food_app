@@ -1,0 +1,89 @@
+.edit-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 80px;
+    text-align: center
+}
+
+.edit-title {
+    font-size: 42px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.edit-title span {
+    font-size: 56px;
+}
+
+.edit-title .header__title-first {
+    color: $orange;
+}
+
+.edit-explain {
+    font-size: 32px;
+    font-weight: bold;
+    color: $real-dark-basic;
+    padding-bottom: 20px;
+}
+
+.edit-container form {
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-container form .photo {
+    width: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid $real-dark-basic;
+    color: white;
+
+}
+
+.edit-container form .photo label {
+    width: 100px;
+    background-color: $real-dark-basic;
+    padding: 5px 0;
+}
+
+.edit-container form .name {
+    width: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid $real-dark-basic;
+    color: white;
+
+}
+
+.edit-container form .name span {
+    width: 100px;
+    background-color: $real-dark-basic;
+    padding: 5px 0;
+}
+
+.edit-container form .name input {
+    border: none;
+    width: 400px;
+    margin-left: 10px;
+}
+
+.edit-container .submit {
+    width: 200px;
+    background-color: $dark-basic;
+    border: none;
+    border-radius: 20px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+}
